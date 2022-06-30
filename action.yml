@@ -1,0 +1,16 @@
+name: 'Container Action'
+description:  'Container action demo'
+inputs:
+  your-name:    # id of input
+    description:  'your name'
+    required: true
+    default: 'ODNMAN'
+outputs:
+  time:   # id of output
+    description: 'The time of the message'
+
+runs:
+  using: docker
+  image:  'Dockerfile'
+  args:
+    - ${{ inputs.your_name }}
